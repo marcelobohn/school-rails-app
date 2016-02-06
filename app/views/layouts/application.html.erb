@@ -7,22 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <head>
-    <h1>School App</h1>
-    <%= link_to 'Home', root_path %>
-    <%= link_to 'Student', students_path %>
-    <%= link_to 'Course', courses_path %>
-    <%= link_to 'Enrollment', enrollments_new_path %>
-    <hr>
-  </head>
+  <header>
+    <div class='panel-heading'>
+      <h1 class='panel-title'> School App</h3>
+    </div>
+    <h1></h1>
+    <div class='container'>
+      <nav class='navbar navbar-default'>
+        <div class='container-fluid'>
+          <ul class='nav navbar-nav'>
+            <li> <%= link_to "Home", root_path %>
+            <li> <%= link_to "Student", students_path %>
+            <li> <%= link_to "Course", courses_path %>
+            <li> <%= link_to "New Enrollment", enrollments_new_path %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
 
   <div id="main">
-    <%= yield %>
+    <div class='container'>
+      <%= yield %>
+    </div>
   </div>
 
   <footer>
-    <hr>
-    2016 - http://rocky-beyond-26838.herokuapp.com/
+    <div class='panel-footer'>
+      2016 - http://rocky-beyond-26838.herokuapp.com/
+    </div>
   </footer>
 </body>
 </html>
