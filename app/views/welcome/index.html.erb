@@ -4,8 +4,10 @@
 <div>
   Total Courses: <%= @total_courses %>
 </div>
-<div>
-  Last Enrollment:<br />
-  Student: <%= @last_enroolment.student.name %><br />
-  Course: <%= @last_enroolment.course.name %>
-</div>
+<% if (@last_enroolment) %>
+  <div>
+    Last Enrollment:<br />
+    Student: <%= @last_enroolment.student.name %><br />
+    Course: <%= @last_enroolment.course.name %>
+  </div>
+<% end %>
