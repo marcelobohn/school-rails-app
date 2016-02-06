@@ -2,13 +2,13 @@
 
 <%= form_tag("/enrollments/create", method: "post") do %>
   <p>
-    <%= label_tag(:course_id, "Courses:") %>
-    <%= select_tag "course_id", options_from_collection_for_select(@all_courses, "id", "name") %>
+    <%= label_tag(:student_id, "Students:") %>
+    <%= select_tag "student_id", options_from_collection_for_select(@all_students, "id", "name"), {prompt: 'Select Student'} %>
   </p>
 
   <p>
-    <%= label_tag(:student_id, "Students:") %>
-    <%= select_tag "student_id", options_from_collection_for_select(@all_students, "id", "name") %>
+    <%= label_tag(:course_id, "Courses:") %>
+    <%= select_tag "course_id" %>
   </p>
 
   <p>

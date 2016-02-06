@@ -61,6 +61,16 @@ class CoursesController < ApplicationController
     end
   end
 
+  def get_all_free_by_student
+    @courses = Course.where.not(id: Classroom.where(:student_id => params['student_id']).select(:course_id))
+    render :json => @courses
+  end
+
+  def get_all_dont_use
+    @courses = Course.where.not(id: Classroom.select(:course_id))
+    render :json => @courses
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course

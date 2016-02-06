@@ -15,3 +15,26 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('#student_id').on('change',function(){
+    get_courses($(this).val());
+  });
+});
+
+function get_courses(p_student_id) {
+  $('#course_id').empty();
+  if (p_student_id > 0) {
+    $.ajax({
+     type: "POST",
+     url: "/courses/get_all_free_by_student",
+     data: { student_id: p_student_id },
+     dataType: 'json',
+     success: function(courses) {
+       $(courses).each(function(index,course) {
+         $('#course_id').append('<option value="' + course.id + '">' + course.name + '</option>');
+       });
+     }
+   })
+ };
+};
