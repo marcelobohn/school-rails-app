@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Student.create name: 'Marcelo', register_number: 'A01', status: 1
 Course.create name: 'RSpec', description: 'Test Framework', status: 1
+Classroom.create student_id:Student.first.id, course_id:Course.first.id

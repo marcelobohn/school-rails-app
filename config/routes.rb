@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'enrollments/new'
+  post 'enrollments/create'
+
   resources :courses
 
   resources :students
