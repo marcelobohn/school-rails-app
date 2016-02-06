@@ -15,7 +15,7 @@
       <tr>
         <td><%= course.name %></td>
         <td><%= course.description %></td>
-        <td><%= course.status %></td>
+        <td><span class="glyphicon <%= course.status==1?'glyphicon-ok':'glyphicon-remove'%>" > </span></td>
         <td><%= link_to 'Show', course, :class => 'btn btn-mini'  %></td>
         <td><%= link_to 'Edit', edit_course_path(course), :class => 'btn btn-mini'  %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>

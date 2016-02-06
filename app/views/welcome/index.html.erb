@@ -1,13 +1,17 @@
-<div>
-  Total Students: <%= @total_students %>
+<div class="panel panel-default">
+  <div class="panel-heading">Total Students:</div>
+  <div class="panel-body"><%= @total_students %></div>
 </div>
-<div>
-  Total Courses: <%= @total_courses %>
+<div class="panel panel-default">
+  <div class="panel-heading">Total Courses:</div>
+  <div class="panel-body"><%= @total_courses %></div>
 </div>
 <% if (@last_enroolment) %>
-  <div>
-    Last Enrollment:<br />
-    Student: <%= @last_enroolment.student.name %><br />
-    Course: <%= @last_enroolment.course.name %>
+<div class="panel panel-default">
+  <div class="panel-heading">Last Enrollment:</div>
+  <div class="panel-body">
+    <span>Student:</span> <%= @last_enroolment.student.name %><br />
+    <span>Course:</span> <%= @last_enroolment.course.name %>
   </div>
+</div>
 <% end %>
