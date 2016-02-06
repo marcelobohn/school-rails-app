@@ -12,8 +12,22 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @student.status %>
+  <span class="glyphicon <%= @student.status==1?'glyphicon-ok':'glyphicon-remove'%>" > </span>
 </p>
+
+<% if (@student.classrooms) %>
+  <div class="panel panel-default">
+    <div class="panel-heading">Courses:</div>
+    <div class="panel-body">
+      <ul>
+        <% @student.classrooms.each do |classroom| %>
+          <li> <%= classroom.course.name %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
