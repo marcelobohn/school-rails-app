@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe EnrollmentsController, :type => :controller do
 
-  describe "GET create" do
+  describe "GET new" do
     it "returns http success" do
-      get :create
-      expect(response).to be_success
+      get :new
+      expect(response).to have_http_status(:success)
     end
   end
 
