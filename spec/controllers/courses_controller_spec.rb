@@ -110,7 +110,8 @@ RSpec.describe CoursesController, :type => :controller do
         course = Course.create! valid_attributes
         put :update, {:id => course.to_param, :course => new_attributes}, valid_session
         course.reload
-        expect(assigns(:course).name).to eq('ReactJs')
+        # expect(assigns(:course).name).to eq('ReactJs')
+        expect(assigns(:course).name).to eq "ReactJs"
       end
 
       it "assigns the requested course as @course" do

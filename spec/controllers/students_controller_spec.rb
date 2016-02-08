@@ -112,7 +112,8 @@ RSpec.describe StudentsController, :type => :controller do
         student = Student.create! valid_attributes
         put :update, {:id => student.to_param, :student => new_attributes}, valid_session
         student.reload
-        expect(assigns(:student).name).to eq('Carlos')
+        # expect(assigns(:student).name).to eq('Carlos')
+        expect(assigns(:student).name).to eq "Carlos"
       end
 
       it "assigns the requested student as @student" do

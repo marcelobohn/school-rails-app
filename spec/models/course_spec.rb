@@ -6,7 +6,8 @@ RSpec.describe Course, :type => :model do
     context "valid attributes" do
       it "should be valid" do
         course = Course.new(name: "React", description: "Web components!", status: 1)
-        course.should be_valid
+        # course.should be_valid
+        expect(course).to be_valid
       end
 
       # it "should be valid" do
@@ -18,7 +19,8 @@ RSpec.describe Course, :type => :model do
     context "invalid attributes" do
       it "should not be valid" do
         course = Course.new(name: "React", description: nil)
-        course.should_not be_valid
+        # course.should_not be_valid
+        expect(course).to_not be_valid
       end
     end
 

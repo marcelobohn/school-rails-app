@@ -8,7 +8,8 @@ RSpec.describe Classroom, :type => :model do
     context "valid attributes" do
       it "should be valid" do
         classroom = Classroom.new(student_id: 1, course_id: 1)
-        classroom.should be_valid
+        # classroom.should be_valid
+        expect(classroom).to be_valid 
       end
     end
   end
