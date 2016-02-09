@@ -16,11 +16,15 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
+$(document).on('page:change', function(event) {
+  page_ready();
+});
+
+function page_ready(){
   $('#student_id').on('change',function(){
     get_courses($(this).val());
   });
-});
+};
 
 function get_courses(p_student_id) {
   $('#course_id').empty();
