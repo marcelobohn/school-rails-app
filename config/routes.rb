@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'enrollments/new'
   post 'enrollments/create'
   get 'courses/get_all_dont_use'
-  post 'courses/get_all_free_by_student'
+  # post 'courses/get_all_free_by_student'
+  match 'courses/get_all_free_by_student', via: [:get, :post]
 
   resources :courses
 

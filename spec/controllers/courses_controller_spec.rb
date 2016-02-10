@@ -157,4 +157,24 @@ RSpec.describe CoursesController, :type => :controller do
     end
   end
 
+  describe "POST get_all_free_by_student" do
+    it "return json" do
+      # Course.all.map{|a| a.delete}
+
+      student = Student.create name: 'Marcelo', register_number: 'A01', status: 1
+      course = Course.create name: 'RSpec', description: 'Test Framework', status: 1
+
+      post :get_all_free_by_student, :listing => {student_id: student.id}
+      json = JSON.parse(response.body)
+      expect(response).to be_success
+      expect(json.first['name']).to eq('RSpec')
+
+      # Classroom.create student_id:student.id, course_id:course.id
+      # post :get_all_free_by_student, :listing => {student_id: student.id}
+      # json = JSON.parse(response.body)
+      # expect(response).to be_success
+      # expect(json).to be_nil
+    end
+  end
+
 end
